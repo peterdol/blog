@@ -1,46 +1,44 @@
 module.exports = {
-  siteMetadata: {
-    url: 'https://lumen.netlify.com',
-    title: 'Blog by John Doe',
-    subtitle: 'Pellentesque odio nisi, euismod in, pharetra a, ultricies in, diam. Sed arcu.',
-    copyright: '© All rights reserved.',
-    disqusShortname: '',
-    menu: [
-      {
-        label: 'Articles',
-        path: '/'
-      },
-      {
-        label: 'About me',
-        path: '/about/'
-      },
-      {
-        label: 'Contact me',
-        path: '/contact/'
-      }
-    ],
-    author: {
-      name: 'John Doe',
-      email: '#',
-      telegram: '#',
-      twitter: '#',
-      github: '#',
-      rss: '#',
-      vk: '#'
-    }
-  },
-  plugins: [
-    {
-      resolve: 'gatsby-source-filesystem',
-      options: {
-        path: `${__dirname}/src/pages`,
-        name: 'pages'
-      }
+    siteMetadata: {
+        url: 'https://lumen.netlify.com',
+        title: 'Blog by Peter Dol',
+        subtitle: 'A blog about .net core and full stack web development.',
+        copyright: '© All rights reserved.',
+        disqusShortname: '',
+        menu: [{
+                label: 'Articles',
+                path: '/'
+            },
+            {
+                label: 'About me',
+                path: '/about/'
+            },
+            {
+                label: 'Contact me',
+                path: '/contact/'
+            }
+        ],
+        author: {
+            name: 'Peter Dol',
+            email: 'peterdol@gmail.com',
+            telegram: '#',
+            twitter: '#',
+            github: '#',
+            rss: '#',
+            vk: '#'
+        }
     },
-    {
-      resolve: 'gatsby-plugin-feed',
-      options: {
-        query: `
+    plugins: [{
+            resolve: 'gatsby-source-filesystem',
+            options: {
+                path: `${__dirname}/src/pages`,
+                name: 'pages'
+            }
+        },
+        {
+            resolve: 'gatsby-plugin-feed',
+            options: {
+                query: `
           {
             site {
               siteMetadata {
@@ -51,19 +49,25 @@ module.exports = {
             }
           }
         `,
-        feeds: [
-          {
-            serialize: ({ query: { site, allMarkdownRemark } }) => (
-              allMarkdownRemark.edges.map(edge =>
-                Object.assign({}, edge.node.frontmatter, {
-                  description: edge.node.frontmatter.description,
-                  date: edge.node.frontmatter.date,
-                  url: site.siteMetadata.site_url + edge.node.fields.slug,
-                  guid: site.siteMetadata.site_url + edge.node.fields.slug,
-                  custom_elements: [{ 'content:encoded': edge.node.html }]
-                }))
-            ),
-            query: `
+                feeds: [{
+                    serialize: ({
+                        query: {
+                            site,
+                            allMarkdownRemark
+                        }
+                    }) => (
+                        allMarkdownRemark.edges.map(edge =>
+                            Object.assign({}, edge.node.frontmatter, {
+                                description: edge.node.frontmatter.description,
+                                date: edge.node.frontmatter.date,
+                                url: site.siteMetadata.site_url + edge.node.fields.slug,
+                                guid: site.siteMetadata.site_url + edge.node.fields.slug,
+                                custom_elements: [{
+                                    'content:encoded': edge.node.html
+                                }]
+                            }))
+                    ),
+                    query: `
               {
                 allMarkdownRemark(
                   limit: 1000,
@@ -88,47 +92,49 @@ module.exports = {
                 }
               }
             `,
-            output: '/rss.xml'
-          }
-        ]
-      }
-    },
-    {
-      resolve: 'gatsby-transformer-remark',
-      options: {
-        plugins: [
-          {
-            resolve: 'gatsby-remark-images',
-            options: {
-              maxWidth: 960
+                    output: '/rss.xml'
+                }]
             }
-          },
-          {
-            resolve: 'gatsby-remark-responsive-iframe',
-            options: { wrapperStyle: 'margin-bottom: 1.0725rem' }
-          },
-          'gatsby-remark-prismjs',
-          'gatsby-remark-copy-linked-files',
-          'gatsby-remark-smartypants'
-        ]
-      }
-    },
-    'gatsby-transformer-sharp',
-    'gatsby-plugin-sharp',
-    {
-      resolve: 'gatsby-plugin-google-analytics',
-      options: { trackingId: 'UA-73379983-2' }
-    },
-    {
-      resolve: `gatsby-plugin-google-fonts`,
-      options: {
-        fonts: [`roboto\:400,400i,500,700`]
-      }
-    },
-    {
-      resolve: 'gatsby-plugin-sitemap',
-      options: {
-        query: `
+        },
+        {
+            resolve: 'gatsby-transformer-remark',
+            options: {
+                plugins: [{
+                        resolve: 'gatsby-remark-images',
+                        options: {
+                            maxWidth: 960
+                        }
+                    },
+                    {
+                        resolve: 'gatsby-remark-responsive-iframe',
+                        options: {
+                            wrapperStyle: 'margin-bottom: 1.0725rem'
+                        }
+                    },
+                    'gatsby-remark-prismjs',
+                    'gatsby-remark-copy-linked-files',
+                    'gatsby-remark-smartypants'
+                ]
+            }
+        },
+        'gatsby-transformer-sharp',
+        'gatsby-plugin-sharp',
+        {
+            resolve: 'gatsby-plugin-google-analytics',
+            options: {
+                trackingId: 'UA-73379983-2'
+            }
+        },
+        {
+            resolve: `gatsby-plugin-google-fonts`,
+            options: {
+                fonts: [`roboto\:400,400i,500,700`]
+            }
+        },
+        {
+            resolve: 'gatsby-plugin-sitemap',
+            options: {
+                query: `
             {
               site {
                 siteMetadata {
@@ -147,20 +153,23 @@ module.exports = {
                 }
               }
           }`,
-        output: '/sitemap.xml',
-        serialize: ({ site, allSitePage }) =>
-          allSitePage.edges.map((edge) => {
-            return {
-              url: site.siteMetadata.url + edge.node.path,
-              changefreq: 'daily',
-              priority: 0.7
-            };
-          })
-      }
-    },
-    'gatsby-plugin-offline',
-    'gatsby-plugin-catch-links',
-    'gatsby-plugin-react-helmet',
-    'gatsby-plugin-postcss-sass'
-  ]
+                output: '/sitemap.xml',
+                serialize: ({
+                        site,
+                        allSitePage
+                    }) =>
+                    allSitePage.edges.map((edge) => {
+                        return {
+                            url: site.siteMetadata.url + edge.node.path,
+                            changefreq: 'daily',
+                            priority: 0.7
+                        };
+                    })
+            }
+        },
+        'gatsby-plugin-offline',
+        'gatsby-plugin-catch-links',
+        'gatsby-plugin-react-helmet',
+        'gatsby-plugin-postcss-sass'
+    ]
 };

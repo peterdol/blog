@@ -14,8 +14,7 @@ class Menu extends React.Component {
               exact
               to={item.path}
               className="menu__list-item-link"
-              activeClassName="menu__list-item-link menu__list-item-link--active"
-            >
+              activeClassName="menu__list-item-link menu__list-item-link--active">
               {item.label}
             </Link>
           </li>
