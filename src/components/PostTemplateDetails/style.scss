@@ -77,7 +77,7 @@
                 display: inline-block;
                 margin: 10px 5px;
                 &-link {
-                    background: $color-purple-bg;
+                    background: $color-yellow-bg;
                     text-decoration: none;
                     border: 0;
                     border-radius: 3px;
@@ -87,7 +87,7 @@
                     &:hover,
                     &:focus {
                         color: $color-white;
-                        background: darken($color-purple-bg, 5%);
+                        background: darken($color-yellow-bg, 5%);
                         border: 0;
                     }
                 }
