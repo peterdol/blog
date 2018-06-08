@@ -1,6 +1,5 @@
 @import "../../assets/scss/variables";
 @import "../../assets/scss/mixins";
-
 .post-single {
     &__inner {
         max-width: $layout-post-single-max-width;
@@ -78,17 +77,17 @@
                 display: inline-block;
                 margin: 10px 5px;
                 &-link {
-                    background: $color-gray-bg;
+                    background: $color-purple-bg;
                     text-decoration: none;
                     border: 0;
                     border-radius: 3px;
-                    color: lighten($color-base, 20%);
+                    color: $color-white;
                     line-height: $typographic-base-line-height;
                     padding: 8px 16px;
                     &:hover,
                     &:focus {
-                        color: $color-base;
-                        background: darken($color-gray-bg, 5%);
+                        color: $color-white;
+                        background: darken($color-purple-bg, 5%);
                         border: 0;
                     }
                 }
@@ -105,15 +104,15 @@
         height: 35px;
         line-height: 35px;
         text-align: center;
-        color: lighten($color-base, 20%);
-        background: $color-gray-bg;
+        color: $color-white;
+        background: $color-blue;
         font-weight: 400;
         border-radius: 3px;
         @include margin-top(1);
         &:hover,
         &:focus {
-            color: $color-base;
-            background: darken($color-gray-bg, 5%);
+            color: $color-white;
+            background: darken($color-blue, 5%);
             border: 0;
         }
     }
