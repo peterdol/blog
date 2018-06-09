@@ -77,7 +77,7 @@ public string GenerateReservationCode()
 }
 ```
 
-The code above generates reservation codes that look like SDX1oWoL5bTffRQkb6cwSC, 9G8UA5To42hzA7VWopEVUJ, etc., which are impossible to guess and are guaranteed to be unique and which are more or less human readable.
+The code above generates reservation codes that look like SDX1oWoL5bTffRQkb6cwSC, 9G8UA5To42hzA7VWopEVUJ, etc., which are guaranteed to be unique and which are more or less human readable.
 
 ## Unique, but not guaranteed to be random
 
@@ -121,3 +121,5 @@ public string GenerateReservationCode()
     return result;
 }
 ```
+
+If you want shorter codes that can more easily be read, you could settle for a byte array with a length of 8 instead of 16, which generates shorter codes like GmTvbTmsmGi, bQ1EaiwTd1d, etc.
