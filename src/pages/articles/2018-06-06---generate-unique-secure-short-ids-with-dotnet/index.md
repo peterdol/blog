@@ -11,7 +11,7 @@ tags:
   - ".NET Core"
   - "Web Development"
   - "Security"
-description: "This blog post describes how to generate unique short id's with .net that are still secure."
+description: "The eTender REST API generates unique reservation codes after a client creates a reservation. This reservation code alone is enough to cancel or update a reservation, so it should be unique and impossible to guess or tamper with using a brute force attack. In this blog post I describe how we generate these id’s."
 ---
 
 The [eTender REST API](http://thereservationbook.com/docs/developers/) generates unique reservation codes after a client creates a reservation. This reservation code alone is enough to cancel or update a reservation, so it should be unique and impossible to guess or tamper with using a brute force attack. In this blog post I describe how we generate these id's.
