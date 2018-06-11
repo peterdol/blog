@@ -92,9 +92,11 @@ public string GenerateReservationCode()
 {
     const string digits = "123456789ABCDEFGHJKLMNPQRSTUVWXYZabcdefghijkmnopqrstuvwxyz";
 
-    var rng = new System.Security.Cryptography.RNGCryptoServiceProvider();
     var data = new byte[16];
-    rng.GetBytes(data);
+    using (var rng = new System.Security.Cryptography.RNGCryptoServiceProvider())
+    {
+        rng.GetBytes(data);
+    }
 
     // Decode byte[] to BigInteger
     BigInteger intData = 0;
@@ -104,7 +106,7 @@ public string GenerateReservationCode()
     }
 
     // Encode BigInteger to Base58 string
-    string result = "";
+    string result = string.Empty;
     while (intData > 0)
     {
         int remainder = (int)(intData % 58);
@@ -117,9 +119,8 @@ public string GenerateReservationCode()
     {
         result = '1' + result;
     }
-
     return result;
 }
 ```
 
-If you want shorter codes that can more easily be read, you could settle for a byte array with a length of 8 instead of 16, which generates shorter codes like GmTvbTmsmGi, bQ1EaiwTd1d, etc.
+If you want shorter codes that can more easily be read, you could settle for a byte array with a length of 8 instead of 16, which generates shorter codes like GmTvbTmsmGi, bQ1EaiwTd1d, etc. These shorter codes are ofcourse less secure then the longer ones, but more then secure enought for reservation codes which are valid only for a short period of time.
