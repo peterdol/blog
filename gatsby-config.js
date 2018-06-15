@@ -22,7 +22,8 @@ module.exports = {
             name: 'Peter Dol',
             email: 'peterdol@gmail.com',
             github: 'peterdol',
-            rss: ''
+            rss: '',
+            twitter: ''
         }
     },
     plugins: [{
