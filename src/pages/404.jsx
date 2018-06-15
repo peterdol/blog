@@ -5,7 +5,7 @@ class NotFoundRoute extends React.Component {
   render() {
     return (
       <div>
-        <Sidebar {...this.props} />
+        <Sidebar {...this.props}/>
         <div className="content">
           <div className="content__inner">
             <div className="page">
@@ -23,7 +23,7 @@ class NotFoundRoute extends React.Component {
 
 export default NotFoundRoute;
 
-export const pageQuery = graphql`
+export const pageQuery = graphql `
   query NotFoundQuery {
     site {
       siteMetadata {
@@ -37,11 +37,8 @@ export const pageQuery = graphql`
         author {
           name
           email
-          telegram
-          twitter
           github
           rss
-          vk
         }
       }
     }
