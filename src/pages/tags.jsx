@@ -6,13 +6,13 @@ import Sidebar from '../components/Sidebar';
 
 class TagsRoute extends React.Component {
   render() {
-    const { title } = this.props.data.site.siteMetadata;
+    const {title} = this.props.data.site.siteMetadata;
     const tags = this.props.data.allMarkdownRemark.group;
 
     return (
       <div>
-        <Helmet title={`All Tags - ${title}`} />
-        <Sidebar {...this.props} />
+        <Helmet title={`All Tags - ${title}`}/>
+        <Sidebar {...this.props}/>
         <div className="content">
           <div className="content__inner">
             <div className="page">
@@ -22,8 +22,11 @@ class TagsRoute extends React.Component {
                   <ul className="tags__list">
                     {tags.map(tag => (
                       <li key={tag.fieldValue} className="tags__list-item">
-                        <Link to={`/tags/${kebabCase(tag.fieldValue)}/`} className="tags__list-item-link">
-                          {tag.fieldValue} ({tag.totalCount})
+                        <Link
+                          to={`/tags/${kebabCase(tag.fieldValue)}/`}
+                          className="tags__list-item-link">
+                          {tag.fieldValue}
+                          ({tag.totalCount})
                         </Link>
                       </li>
                     ))}
@@ -40,7 +43,7 @@ class TagsRoute extends React.Component {
 
 export default TagsRoute;
 
-export const pageQuery = graphql`
+export const pageQuery = graphql `
   query TagsQuery {
     site {
       siteMetadata {
@@ -54,11 +57,8 @@ export const pageQuery = graphql`
         author {
           name
           email
-          telegram
-          twitter
           github
           rss
-          vk
         }
       }
     }

@@ -6,7 +6,7 @@ import './style.scss';
 
 class PostTemplateDetails extends React.Component {
   render() {
-    const { subtitle, author } = this.props.data.site.siteMetadata;
+    const {subtitle, author} = this.props.data.site.siteMetadata;
     const post = this.props.data.markdownRemark;
     const tags = post.fields.tagSlugs;
 
@@ -32,7 +32,7 @@ class PostTemplateDetails extends React.Component {
 
     const commentsBlock = (
       <div>
-        <Disqus postNode={post} siteMetadata={this.props.data.site.siteMetadata} />
+        <Disqus postNode={post} siteMetadata={this.props.data.site.siteMetadata}/>
       </div>
     );
 
@@ -42,18 +42,27 @@ class PostTemplateDetails extends React.Component {
         <div className="post-single">
           <div className="post-single__inner">
             <h1 className="post-single__title">{post.frontmatter.title}</h1>
-            <div className="post-single__body" dangerouslySetInnerHTML={{ __html: post.html }} />
+            <div
+              className="post-single__body"
+              dangerouslySetInnerHTML={{
+              __html: post.html
+            }}/>
             <div className="post-single__date">
               <em>Published {moment(post.frontmatter.date).format('D MMM YYYY')}</em>
             </div>
           </div>
           <div className="post-single__footer">
             {tagsBlock}
-            <hr />
+            <hr/>
             <p className="post-single__footer-text">
               {subtitle}
-              <a href={`https://twitter.com/${author.twitter}`} target="_blank" rel="noopener noreferrer">
-                <br /> <strong>{author.name}</strong> on Twitter
+              <a
+                href={`https://github.com/${author.github}`}
+                target="_blank"
+                rel="noopener noreferrer">
+                <br/>
+                <strong>{author.name}</strong>
+                on GitHub
               </a>
             </p>
             {commentsBlock}

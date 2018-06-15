@@ -5,14 +5,14 @@ import CategoryTemplateDetails from '../components/CategoryTemplateDetails';
 
 class CategoryTemplate extends React.Component {
   render() {
-    const { title } = this.props.data.site.siteMetadata;
-    const { category } = this.props.pathContext;
+    const {title} = this.props.data.site.siteMetadata;
+    const {category} = this.props.pathContext;
 
     return (
       <div>
-        <Helmet title={`${category} - ${title}`} />
-        <Sidebar {...this.props} />
-        <CategoryTemplateDetails {...this.props} />
+        <Helmet title={`${category} - ${title}`}/>
+        <Sidebar {...this.props}/>
+        <CategoryTemplateDetails {...this.props}/>
       </div>
     );
   }
@@ -20,7 +20,7 @@ class CategoryTemplate extends React.Component {
 
 export default CategoryTemplate;
 
-export const pageQuery = graphql`
+export const pageQuery = graphql `
   query CategoryPage($category: String) {
     site {
       siteMetadata {
@@ -34,11 +34,8 @@ export const pageQuery = graphql`
         author {
           name
           email
-          telegram
-          twitter
           github
           rss
-          vk
         }
       }
     }

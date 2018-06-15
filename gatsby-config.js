@@ -21,11 +21,7 @@ module.exports = {
         author: {
             name: 'Peter Dol',
             email: 'peterdol@gmail.com',
-            telegram: '#',
-            twitter: '#',
-            github: '#',
-            rss: '#',
-            vk: '#'
+            github: 'peterdol'
         }
     },
     plugins: [{

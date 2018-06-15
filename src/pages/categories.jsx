@@ -6,13 +6,13 @@ import Sidebar from '../components/Sidebar';
 
 class CategoriesRoute extends React.Component {
   render() {
-    const { title } = this.props.data.site.siteMetadata;
+    const {title} = this.props.data.site.siteMetadata;
     const categories = this.props.data.allMarkdownRemark.group;
 
     return (
       <div>
-        <Helmet title={`All Categories - ${title}`} />
-        <Sidebar {...this.props} />
+        <Helmet title={`All Categories - ${title}`}/>
+        <Sidebar {...this.props}/>
         <div className="content">
           <div className="content__inner">
             <div className="page">
@@ -22,8 +22,11 @@ class CategoriesRoute extends React.Component {
                   <ul className="categories__list">
                     {categories.map(category => (
                       <li key={category.fieldValue} className="categories__list-item">
-                        <Link to={`/categories/${kebabCase(category.fieldValue)}/`} className="categories__list-item-link">
-                          {category.fieldValue} ({category.totalCount})
+                        <Link
+                          to={`/categories/${kebabCase(category.fieldValue)}/`}
+                          className="categories__list-item-link">
+                          {category.fieldValue}
+                          ({category.totalCount})
                         </Link>
                       </li>
                     ))}
@@ -40,7 +43,7 @@ class CategoriesRoute extends React.Component {
 
 export default CategoriesRoute;
 
-export const pageQuery = graphql`
+export const pageQuery = graphql `
   query CategoryesQuery {
     site {
       siteMetadata {
@@ -54,11 +57,8 @@ export const pageQuery = graphql`
         author {
           name
           email
-          telegram
-          twitter
           github
           rss
-          vk
         }
       }
     }
