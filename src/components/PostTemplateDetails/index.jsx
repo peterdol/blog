@@ -61,7 +61,8 @@ class PostTemplateDetails extends React.Component {
                 target="_blank"
                 rel="noopener noreferrer">
                 <br/>
-                <strong>{author.name}</strong>
+                <strong>{author.name}
+                </strong>
                 on GitHub
               </a>
             </p>
