@@ -20,7 +20,7 @@ My technique is an improvement on [this blogpost](https://madskristensen.net/blo
 
 ## Base58 instead of Base64
 
-Instead of Base64 encoding and replacing some characters after the encoding, we Base58 encode the Guid, and skip the characters we don't want right away in the encoding phase. My Base58 encoding algorithm is based on the one used in [this github gist](https://gist.github.com/CodesInChaos/3175971) to encode bitcoin addresses.
+Instead of Base64 encoding and replacing some characters after the encoding, it's better to Base58 encode the Guid, and skip the characters we don't want right away in the encoding phase. My Base58 encoding algorithm is based on the one used in [this github gist](https://gist.github.com/CodesInChaos/3175971) to encode bitcoin addresses.
 
 [This wiki page](https://en.bitcoin.it/wiki/Base58Check_encoding) lists the following advantages of Base58 encoding over Base64 encoding:
 
