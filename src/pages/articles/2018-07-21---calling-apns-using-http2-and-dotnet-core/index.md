@@ -1,16 +1,16 @@
 ---
-title: "Calling APNS using HTTP/2 and .NET Core"
+title: "Calling APNS using HTTP2 and .NET Core"
 date: "2018-07-21T22:40:32.169Z"
 layout: post
 draft: false
 slug: "apns-dotnet-core"
-path: "/posts/calling-apns-using-http2-and-dotnet-core/"
+path: "/posts/calling-apns-using-http2-and-dotnet/"
 category: ".NET Core"
 tags:
   - "eTender"
   - ".NET Core"
   - "Web Development"
-description: "This blog post describes how to call the APNS HTTP/2 API from .NET Core."
+description: "The eTender Messenger sends out push notifications to connected iOS devices. This blog post describes how to connect to the HTTP/2 APNS (Apple Push Notification Service) from .NET Core."
 ---
 
 The eTender Messenger sends out push notifications to connected iOS devices. This blog post describes how to connect to the HTTP/2 APNS (Apple Push Notification Service) from .NET Core. In this blog post I highlight the following parts necessary to connect to APNS:
