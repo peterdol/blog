@@ -1,5 +1,5 @@
 ---
-title: "How to generate unique short id's that are still secure"
+title: "How to generate secure short id's"
 date: "2018-06-06T17:40:32.169Z"
 layout: post
 draft: false
