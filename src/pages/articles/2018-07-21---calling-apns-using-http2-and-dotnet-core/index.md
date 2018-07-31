@@ -23,7 +23,7 @@ The eTender Messenger sends out push notifications to connected iOS devices. Thi
 
 First you have to create a HTTP/2 web request. This can be done explicitly like this:
 
-```js
+```csharp
 \\ the content is the JSON payload, this is described later in this blog post
 var request = new HttpRequestMessage(HttpMethod.Post, $"{this.apnsSettings.BaseUrl}{deviceToken}")
     {
@@ -37,7 +37,7 @@ var request = new HttpRequestMessage(HttpMethod.Post, $"{this.apnsSettings.BaseU
 
 The JWT is created as follows. We run on windows server 2016, so we can use the Windows Cryptography Next Generation (CNG) library which is not available on OSX and Linux.
 
-```js
+```csharp
 private string CreateJwt()
 {
     string provider = JsonConvert.SerializeObject(
