@@ -19,14 +19,17 @@ The eTender widget has a feature where restaurants can overrule and add their ow
 With ES6 comes the spread syntax, which allows an iterable to expand in places where 0+ arguments are expected and which can also be used to merge objects in a very elegant way.
 
 ```js
-const result = {
-  ...obj1,
-  ...obj2,
+const defaultTexts = { title: 'Date', button: 'Continue' }
+const overruledTexts = { button: 'Next', note: 'Click next' }
+const combinedText = {
+  ...defaultTexts,
+  ...overruledTexts,
 }
+// now combinedText equals { title: "Date", button: "Next", note: "Click next" }
 ```
 
 I find the above syntax visually very pleasing. In my imagination the dots represent the unpacking of 2 stacks of boxes, after which they get combined and packed up again in a new, bigger stack by the surrounding brackets.
 
 Smart features like this just put a smile on my face and make ES6 really a joy to use.
 
-The order of the combined objects matters by the way, if obj1 and obj2 share some properties, the properties of obj2 will overrule the properties of obj1.
+The order of the combined objects matters by the way, if the merged objects share some properties, the properties of the last object will overrule the properties of previous objects.
