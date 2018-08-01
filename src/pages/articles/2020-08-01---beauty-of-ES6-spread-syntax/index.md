@@ -19,7 +19,7 @@ The eTender widget has a feature where restaurants can overrule and add their ow
 With ES6 comes the spread syntax, which allows an iterable to expand in places where 0+ arguments are expected and which can also be used to merge objects in a very elegant way.
 
 ```js
-var result = {
+const result = {
   ...obj1,
   ...obj2,
 }
