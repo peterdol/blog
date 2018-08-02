@@ -11,7 +11,7 @@ tags:
   - "eTender"
   - "React.js"
   - "Web Development"
-description: "One of the many improvements in ES6 is the spread syntax. Just a short blog post to applaud for it's beauty ;-)"
+description: "One of the many improvements in ES6 is the spread syntax. It allows an iterable to expand in places where 0+ arguments are expected and can also be used to merge objects in a very elegant way."
 ---
 
 The eTender widget has a feature where restaurants can overrule and add their own widget texts. For this I had to merge two arrays with key value pairs, which before ES6 was not difficult, just a little bit clunky.
